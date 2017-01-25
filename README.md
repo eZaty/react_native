@@ -5,7 +5,11 @@ This is my own framework for React Native
 ## Utilities (root > utilities)
 
 1. geo.js
+
+
 How to use:
+
+
 a. Add this in the beginning of your js file to import the component
 import { Geo} from './utilities/geo';
 
