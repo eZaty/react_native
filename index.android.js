@@ -1,80 +1,33 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-/* eslint no-console: 0 */
 'use strict';
+import React, { Component } from 'react';
+import {AppRegistry} from 'react-native';
+import {Actions, Scene, Router} from 'react-native-router-flux';
 
+import {MainPage} from './pages/main/main';
+import {GeoPage} from './pages/geo/geo';
+import {TryCameraPage} from './pages/try_camera/camera';
+import {CameraPage} from './pages/camera/camera';
 
-var React = require('react');
-var ReactNative = require('react-native');
-var {
-  StyleSheet,
-  Text,
-  View,
-} = ReactNative;
-
-exports.framework = 'React';
-exports.title = 'Geolocation';
-exports.description = 'Examples of using the Geolocation API.';
-
-exports.examples = [
-  {
-    title: 'navigator.geolocation',
-    render: function(): React.Element<any> {
-      return <GeolocationExample />;
-    },
-  }
-];
-
-class GeolocationExample extends React.Component {
-  state = {
-    initialPosition: 'unknown',
-    lastPosition: 'unknown',
-  };
-
-  watchID: ?number = null;
-
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        var initialPosition = JSON.stringify(position);
-        this.setState({initialPosition});
-      },
-      (error) => alert(JSON.stringify(error)),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-    );
-    this.watchID = navigator.geolocation.watchPosition((position) => {
-      var lastPosition = JSON.stringify(position);
-      this.setState({lastPosition});
-    });
-  }
-
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID);
-  }
+class MainNavigator extends Component {
+  
 
   render() {
     return (
-      <View>
-        <Text>
-          <Text style={styles.title}>Initial position: </Text>
-          {this.state.initialPosition}
-        </Text>
-        <Text>
-          <Text style={styles.title}>Current position: </Text>
-          {this.state.lastPosition}
-        </Text>
-      </View>
+    <Router>
+        <Scene key="root">
+          <Scene key="main" hideNavBar={true} component={MainPage} title="" initial={true} />
+          <Scene key="geo" hideNavBar={true} component={GeoPage} title="" />
+          <Scene key="try_cam" hideNavBar={true} component={TryCameraPage} title="" />
+          <Scene key="advcam" hideNavBar={false} component={CameraPage} title="" />
+        </Scene>
+      </Router>
+
     );
   }
 }
 
-var styles = StyleSheet.create({
-  title: {
-    fontWeight: '500',
-  },
-});
+AppRegistry.registerComponent('utilities', () => MainNavigator);
 
-AppRegistry.registerComponent('rnApp', () => GeolocationExample);
+
+
+

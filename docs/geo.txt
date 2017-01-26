@@ -37,3 +37,8 @@ reloadgeo(lon,lat,times){
 e. Use the states (longitude, latitude, timestamp) directly from your view
 <Text>{this.state.longitude}</Text>
 
+
+f. For android, please add 
+"<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />"
+in android/app/src/main/AndroidManifest.xml
+after openning tag of manifest
