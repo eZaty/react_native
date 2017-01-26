@@ -1,4 +1,4 @@
-This is for using "utilities > geo.js" component for getting
+This is for using "components > geo > geo.js" component for getting
 - longitude
 - latitude
 - timestamp of when then longitude and latitude is received
@@ -8,7 +8,7 @@ How to use:
 
 
 a. Add this in the beginning of your js file to import the component
-import { Geo} from './utilities/geo';
+import { Geo} from './components/geo/geo';
 
 
 

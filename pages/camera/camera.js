@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Camera from 'react-native-camera';
 import {AdvanceCamera} from '../../components/camera/camera';
 
 

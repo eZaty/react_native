@@ -30,9 +30,26 @@ export class MainPage extends Component {
       <ScrollView>
       <TouchableOpacity onPress={()=>alert("Working")}>
       <View style={[s.alwaysred, s.centerall]}>
-      <Text>{"\n\n"}Show Alert</Text>
+      <Text>{"\n\n"}{values.ALERT_BUTTON}</Text>
       </View>
       </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>Actions.geo({perkataan:"Back"})}>
+      <View style={[s.green, s.centerall]}>
+      <Text>{"\n\n"}{values.GPS_BUTTON}</Text>
+      </View>
+      </TouchableOpacity>
+
+      <Image source={require('../../images/grandcanyon.png')} />
+
+      <TouchableOpacity onPress={()=>Actions.advcam()}>
+      <View style={[s.blue, s.centerall]}>
+      <Text>{"\n\n"}{values.CAMERA_BUTTON}</Text>
+      </View>
+      </TouchableOpacity>
+
+
+    {/*
       <TouchableOpacity onPress={()=>Actions.geo({location:"Malaysia"})}>
       <Image source={require('../../images/grandcanyon.png')} >
       <View style={[s.button, s.centerall]}>
@@ -47,6 +64,7 @@ export class MainPage extends Component {
       </View>
       </Image>
       </TouchableOpacity>
+    */}
       </ScrollView>
     );
   }

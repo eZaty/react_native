@@ -8,6 +8,9 @@ module.exports = {
     DARKGRAY: '#999',
   },
   TITLE: 'Prepaid App',
+  ALERT_BUTTON:'Show Alert',
+  GPS_BUTTON:'Show GPS',
+  CAMERA_BUTTON:'Show Camera',
 };
 
 

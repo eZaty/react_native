@@ -1,0 +1,22 @@
+This is for using "components > camera > camera.js" component for getting
+- to use camera / video
+
+
+How to use:
+
+
+a. Add this in the beginning of your js file to import the component
+import {AdvanceCamera} from './components/camera/camera';
+
+
+b. Use the tag in your render
+<AdvanceCamera/>
+
+
+c. For android, please add 
+
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:name="android.hardware.camera" />
+
+in android/app/src/main/AndroidManifest.xml
+after openning tag of manifest

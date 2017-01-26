@@ -10,6 +10,16 @@ module.exports = StyleSheet.create({
       height: 100
   },
 
+  green: {
+      backgroundColor: 'green',
+      height: 100
+  },
+
+  blue: {
+      backgroundColor: 'blue',
+      height: 100
+  },
+
   centerall:{
   	justifyContent: 'center',
     alignItems: 'center',

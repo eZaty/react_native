@@ -37,7 +37,7 @@ export class GeoPage extends Component {
          <Geo showlabel="1" reloadgeo={this.reloadgeo.bind(this)}/>
          <TouchableOpacity onPress={()=>Actions.pop()}>
             <View style={s.button}>
-              <Text>{this.props.location}</Text>
+              <Text>{this.props.perkataan}</Text>
             </View>
          </TouchableOpacity>
       </View>
